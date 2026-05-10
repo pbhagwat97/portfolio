@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAE 148 Autonomous Vehicle — Parth Bhagwat</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="project-detail-page">
+
+    <a href="index.html#projects" class="project-detail-back">
+      <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
+      Back to projects
+    </a>
+
+    <article class="project-detail-card">
+
+      <header>
+        <p class="project-detail-meta">Robotics · UC San Diego MAE 148</p>
+        <h1 class="project-detail-title">Autonomous Vehicle Project</h1>
+      </header>
+
+      <figure class="project-detail-hero">
+        <img src="./assets/images/mae148/01.png" alt="MAE 148 autonomous vehicle on the outdoor test track">
+      </figure>
+
+      <section>
+        <p class="project-detail-intro">
+          End-to-end autonomous robotic vehicle capable of navigating a closed track using both a deep learning-based
+          driving model and a GPS-based guidance system. Work spanned mechanical design, electrical integration, and
+          embedded software, with primary ownership of the electronics mounting board, software debugging, power-system
+          troubleshooting, and GPS control tuning. The platform was built to run under vibration, uneven terrain, changing
+          weather, and other real-world outdoor testing conditions.
+        </p>
+      </section>
+
+      <section aria-label="Build photos">
+        <h2 class="project-detail-section-title">Hardware and testing</h2>
+        <p class="project-detail-intro">
+          Acrylic electronics deck, 3D-printed mounts, camera mast, GPS, LiDAR, Raspberry Pi, and power integration during
+          outdoor laps on the marked course.
+        </p>
+        <div class="mae148-gallery">
+          <figure class="mae148-gallery__item">
+            <img src="./assets/images/mae148/02.png" alt="Autonomous vehicle side profile on the outdoor test track with electronics deck and sensor mast" loading="lazy" width="800" height="600">
+          </figure>
+          <figure class="mae148-gallery__item">
+            <img src="./assets/images/mae148/03.png" alt="Front view of the rover showing depth camera mast, LiDAR, and mounted compute hardware" loading="lazy" width="800" height="600">
+          </figure>
+          <figure class="mae148-gallery__item">
+            <img src="./assets/images/mae148/04.png" alt="Top-down view of the acrylic electronics deck, wiring, and sensor modules" loading="lazy" width="800" height="600">
+          </figure>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">Contributions</h2>
+        <ul class="project-detail-list">
+          <li>Designed and prototyped a universal electronics mounting board and custom hardware for onboard components,
+            including the camera, Raspberry Pi, VESC, and GPS, improving packaging, accessibility, and mechanical integration.</li>
+          <li>Optimized component layout for balance and center of gravity, improving stability over bumps, hills, and uneven
+            track sections.</li>
+          <li>Created and validated the wiring layout for onboard subsystems and supported reliable electrical integration
+            across the vehicle.</li>
+          <li>Resolved power-related issues by refining the hardware layout and USB power delivery, improving stability of
+            the Raspberry Pi and peripherals during testing.</li>
+          <li>Configured the embedded Linux environment on the Raspberry Pi and supported installation and deployment of
+            the deep learning and GPS-based autonomy software stack.</li>
+          <li>Trained and deployed the deep learning driving model using GPU clusters for autonomous track navigation.</li>
+          <li>Tuned PID control parameters for GPS-based laps for stable steering and throttle during autonomous operation.</li>
+          <li>Collaborated on hardware integration and overall vehicle layout while leading mounting board design and much of
+            the software debugging.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">Results</h2>
+        <ul class="project-detail-list">
+          <li>Deep learning mode completed three autonomous laps on a track with two hairpin turns and a straight section.</li>
+          <li>GPS mode completed three autonomous laps on a larger loop.</li>
+          <li>Final system demonstrated both navigation approaches on the same vehicle platform.</li>
+          <li>Video demonstrations of both modes document real-world performance (see below).</li>
+        </ul>
+      </section>
+
+      <section aria-label="Video demonstrations">
+        <h2 class="project-detail-section-title">Demonstrations</h2>
+        <p class="project-detail-intro">
+          Field demonstration of the vehicle on the track. Playback starts muted; use the player controls to turn sound on if you want it.
+        </p>
+        <div class="project-detail-videos">
+          <figure class="project-detail-video">
+            <figcaption class="project-detail-video__caption">Autonomous operation — on-track run</figcaption>
+            <div class="project-detail-video__embed">
+              <iframe
+                src="https://www.youtube.com/embed/zPZSY6x4Dy0?mute=1&amp;modestbranding=1&amp;rel=0"
+                title="MAE 148 autonomous vehicle demonstration"
+                loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+          </figure>
+        </div>
+        <p class="project-detail-intro project-detail-video__note">
+          Watch on YouTube:
+          <a href="https://youtu.be/zPZSY6x4Dy0" class="project-detail-video__link" target="_blank" rel="noopener noreferrer">youtu.be/zPZSY6x4Dy0</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">Tools and technologies</h2>
+        <p class="project-detail-intro project-detail-tools">
+          Raspberry Pi, Linux, Python, GPS, VESC, GPU clusters, PID control, Autodesk Fusion 360, 3D printing, soldering,
+          drilling
+        </p>
+      </section>
+
+    </article>
+
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

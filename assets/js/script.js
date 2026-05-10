@@ -11,8 +11,10 @@ const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+// sidebar toggle functionality for mobile (guard so a missing control does not halt the rest of the script)
+if (sidebarBtn && sidebar) {
+  sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+}
 
 
 
@@ -29,6 +31,7 @@ const modalText = document.querySelector("[data-modal-text]");
 
 // modal toggle function
 const testimonialsModalFunc = function () {
+  if (!modalContainer || !overlay) { return; }
   modalContainer.classList.toggle("active");
   overlay.classList.toggle("active");
 }
@@ -58,18 +61,19 @@ const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
+if (select && selectValue) {
+  select.addEventListener("click", function () { elementToggleFunc(this); });
 
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
+  for (let i = 0; i < selectItems.length; i++) {
+    selectItems[i].addEventListener("click", function () {
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
+      let selectedValue = this.innerText.toLowerCase();
+      selectValue.innerText = this.innerText;
+      elementToggleFunc(select);
+      filterFunc(selectedValue);
 
-  });
+    });
+  }
 }
 
 // filter variables
@@ -92,17 +96,17 @@ const filterFunc = function (selectedValue) {
 }
 
 // add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
+let lastClickedBtn = filterBtn.length ? filterBtn[0] : null;
 
 for (let i = 0; i < filterBtn.length; i++) {
 
   filterBtn[i].addEventListener("click", function () {
 
     let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
+    if (selectValue) { selectValue.innerText = this.innerText; }
     filterFunc(selectedValue);
 
-    lastClickedBtn.classList.remove("active");
+    if (lastClickedBtn) { lastClickedBtn.classList.remove("active"); }
     this.classList.add("active");
     lastClickedBtn = this;
 
@@ -137,20 +141,31 @@ if (form && formBtn) {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
+const activatePageByName = function (pageName) {
+  const name = pageName.trim().toLowerCase();
+  for (let j = 0; j < pages.length; j++) {
+    if (name === pages[j].dataset.page) {
+      pages[j].classList.add("active");
+      navigationLinks[j].classList.add("active");
+    } else {
+      pages[j].classList.remove("active");
+      navigationLinks[j].classList.remove("active");
+    }
+  }
+  window.scrollTo(0, 0);
+};
+
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
-    }
-
+    const pageKey = this.dataset.navPage || this.textContent;
+    activatePageByName(pageKey);
   });
 }
+
+// Open Projects tab when returning from a project detail page (index.html#projects)
+window.addEventListener("DOMContentLoaded", function () {
+  if (window.location.hash === "#projects") {
+    activatePageByName("projects");
+  }
+});
