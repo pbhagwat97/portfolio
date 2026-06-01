@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NanoBioElectronic Lab — Parth Bhagwat</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="project-detail-page">
+
+    <a href="index.html#projects" class="project-detail-back">
+      <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
+      Back to projects
+    </a>
+
+    <article class="project-detail-card">
+
+      <header>
+        <p class="project-detail-meta">Research · UC San Diego · Feb 2026 – Present</p>
+        <h1 class="project-detail-title">NanoBioElectronic Lab — Simulation Research</h1>
+      </header>
+
+      <section>
+        <p class="project-detail-intro">
+          As a research assistant in the Nano Bioelectronics (NBE) Lab at UC San Diego, I support wearable biosensing
+          devices through simulation-driven mechanical and fluid analysis. My work spans CAD modeling, finite-element
+          analysis (FEA), computational fluid dynamics (CFD), and theoretical benchmarks that guide experimental design.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">Project 1 — Mouthguard sensor: static stress and structural analysis</h2>
+
+        <h3 class="project-detail-subtitle">Objective</h3>
+        <p class="project-detail-intro">
+          Evaluate the structural integrity of a bioelectronic mouthguard under realistic bite-force loading.
+        </p>
+
+        <h3 class="project-detail-subtitle">Contributions</h3>
+        <ul class="project-detail-list">
+          <li>Built the full CAD model of the mouthguard and embedded electronics geometry</li>
+          <li>Identified load-critical regions based on expected bite-force locations and boundary conditions</li>
+          <li>Performed static stress FEA to evaluate deformation, stress concentrations, and safety factor trends</li>
+          <li>Conducted mesh and pressure sensitivity studies to benchmark the reliability of the simulation results</li>
+          <li>Compared material behavior across the mouthguard, electronics, and tooth-contact interfaces to support design decisions</li>
+          <li>Provided simulation-based recommendations for geometry and material modifications to improve structural durability</li>
+        </ul>
+
+        <h3 class="project-detail-subtitle">Impact</h3>
+        <p class="project-detail-intro">
+          This analysis helped refine the internal structure of the mouthguard, reducing stress concentrations and
+          improving confidence in its durability under real-world loading conditions.
+        </p>
+
+        <h3 class="project-detail-subtitle">Simulation figures</h3>
+
+        <figure class="project-detail-inline-figure">
+          <img src="./assets/images/nbe-lab/01-schematic.png"
+            alt="Static stress FEA workflow from CAD model through mesh, contacts, and solve" loading="lazy"
+            width="1200" height="800">
+          <figcaption>FEA workflow — CAD, loads and constraints, mesh, contacts, and linear solve</figcaption>
+        </figure>
+
+        <figure class="project-detail-inline-figure">
+          <img src="./assets/images/nbe-lab/02-material-model.png"
+            alt="Material assignments: silicone and rubber for mouthguard, steel for electronics, titanium for teeth"
+            loading="lazy" width="1200" height="800">
+          <figcaption>Material model — silicone/rubber (mouthguard), steel (electronics), titanium (teeth)</figcaption>
+        </figure>
+
+        <figure class="project-detail-inline-figure">
+          <img src="./assets/images/nbe-lab/03-mesh-convergence.png"
+            alt="Mesh density study at 10%, 5%, 3%, and 2% with convergence plot and stress at electronics top-right"
+            loading="lazy" width="1200" height="800">
+          <figcaption>Mesh convergence — density study and stress convergence at the electronics top-right point</figcaption>
+        </figure>
+
+        <figure class="project-detail-inline-figure">
+          <img src="./assets/images/nbe-lab/04-pressure-testing.png"
+            alt="Pressure testing at 3% mesh density for 0.001, 0.15, and 0.5 MPa bite-force cases"
+            loading="lazy" width="1200" height="800">
+          <figcaption>Pressure testing — applied loads from 0.001 to 0.5 MPa at 3% mesh density</figcaption>
+        </figure>
+
+        <figure class="project-detail-inline-figure">
+          <img src="./assets/images/nbe-lab/05-deformation.png"
+            alt="Z-deformation and Von Mises stress versus applied pressure for the top face and electronics"
+            loading="lazy" width="1200" height="800">
+          <figcaption>Deformation and stress — z-displacement and Von Mises stress vs. pressure (top face and electronics)</figcaption>
+        </figure>
+
+        <figure class="project-detail-inline-figure">
+          <img src="./assets/images/nbe-lab/07-analysis-points.png"
+            alt="Simulation measurement locations: center point, small electronics, and top-right point"
+            loading="lazy" width="1200" height="800">
+          <figcaption>Points of analysis — locations used for stress and deformation measurement</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">Project 2 — Wearable sweat-sensing system for glucose monitoring (ongoing)</h2>
+
+        <p class="project-detail-intro">
+          I am modeling sweat transport through fully saturated porous paper to emulate fluid movement inside an in-ear
+          wearable biosensing device. The paper is pre-wetted by a hydrogel layer; incoming sweat mixes with the hydrogel
+          before reaching a sensor that selectively detects sweat glucose.
+        </p>
+
+        <h3 class="project-detail-subtitle">Current work</h3>
+        <p class="project-detail-intro">
+          I am developing a physics-based model that predicts sweat flow as a function of evaporation rate, porous-media
+          properties, and fluid mixing behavior. This includes researching appropriate transport models for fully
+          saturated porous materials and determining how evaporation influences flow velocity and concentration
+          gradients.
+        </p>
+
+        <h3 class="project-detail-subtitle">Next steps</h3>
+        <p class="project-detail-intro">
+          I will run a controlled lab experiment to measure the evaporation rate of the hydrogel–paper system. Those
+          values will parameterize a COMSOL Multiphysics simulation of sweat transport through the porous medium. The
+          final model will provide a theoretical benchmark for the lab’s wearable sensor design and support optimization
+          of material selection and device geometry.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">Technical skills</h2>
+        <ul class="project-detail-list">
+          <li><strong>Simulation:</strong> COMSOL Multiphysics (CFD, FEA), Autodesk Fusion 360 (FEA)</li>
+          <li><strong>CAD:</strong> Autodesk Fusion 360</li>
+          <li><strong>Analysis:</strong> Static stress analysis, fluid transport modeling, material behavior</li>
+          <li><strong>Research:</strong> Data interpretation, model validation, documentation for publication-ready figures</li>
+        </ul>
+      </section>
+
+    </article>
+
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

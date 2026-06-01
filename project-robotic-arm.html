@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotic Arm Design and Fabrication — Parth Bhagwat</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="project-detail-page">
+
+    <a href="index.html#projects" class="project-detail-back">
+      <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
+      Back to projects
+    </a>
+
+    <article class="project-detail-card">
+
+      <header>
+        <p class="project-detail-meta">Robotics · Mechanical Design</p>
+        <h1 class="project-detail-title">Robotic Arm Design and Fabrication</h1>
+      </header>
+
+      <section>
+        <p class="project-detail-intro">
+          I designed and built a multi-DOF robotic arm through a full mechanical engineering workflow: early prototyping,
+          CAD development, force and torque analysis, FEA validation, and fabrication with laser cutting, 3D printing,
+          drilling, and reaming. The goal was a structurally reliable, manufacturable arm capable of basic pick-and-place
+          tasks.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">Concept development and prototyping</h2>
+        <p class="project-detail-intro">
+          I started with hand sketches and simple prototypes to explore joint placement, link lengths, and workspace.
+          Early models validated clearances, motion range, and the feasibility of a gear-driven shoulder before moving
+          into a full CAD assembly.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">CAD design</h2>
+        <p class="project-detail-intro">The full CAD model included:</p>
+        <ul class="project-detail-list">
+          <li>Gear-driven shoulder joint with large spur-gear reduction</li>
+          <li>Two-link arm architecture with rotational joints</li>
+          <li>Custom housings, linkages, and bearing seats</li>
+          <li>Modular gripper end-effector</li>
+          <li>Base-mounted motor system for torque transmission</li>
+        </ul>
+        <p class="project-detail-intro">
+          The assembly drove structural analysis, motor sizing, and fabrication planning.
+        </p>
+        <figure class="project-detail-inline-figure">
+          <img src="./assets/images/robotic-arm/01-cad.png"
+            alt="CAD assembly of a multi-DOF robotic arm with gear-driven shoulder, two-link architecture, and modular gripper"
+            loading="lazy" width="1200" height="800">
+          <figcaption>Full CAD assembly — gear-driven shoulder, links, and gripper</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">Force, torque, and power analysis</h2>
+        <p class="project-detail-intro">
+          I sized the first-joint actuator with a free-body diagram at full extension, summing moments about the shoulder
+          pivot to account for gravitational loads on each link and the gripper. After a 3:1 gear reduction, the required
+          stall torque was about <strong>0.8 Nm</strong>, which guided motor and gear selection.
+        </p>
+        <figure class="project-detail-inline-figure">
+          <img src="./assets/images/robotic-arm/02-sketch.png"
+            alt="Hand-drawn free-body sketch and moment-balance calculations for the shoulder joint at full extension"
+            loading="lazy" width="1200" height="800">
+          <figcaption>Free-body sketch and moment balance at full extension</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">Finite element analysis (FEA)</h2>
+        <p class="project-detail-intro">
+          Using those load estimates, I ran targeted static simulations in Autodesk Fusion 360 on stress-critical parts:
+          primary arm links, joint housings, and mounting plates. I applied realistic constraints, refined mesh at stress
+          concentrations, and checked results against material yield. Simulations showed adequate safety margins (e.g.
+          minimum safety factor ~1.33 on the primary link) before fabrication.
+        </p>
+        <div class="project-detail-inline-figures">
+          <figure class="project-detail-inline-figure">
+            <img src="./assets/images/robotic-arm/03-fea-link.png"
+              alt="Fusion 360 static stress simulation showing safety factor on the primary arm link"
+              loading="lazy" width="800" height="600">
+            <figcaption>Primary arm link — safety factor (min ~1.33)</figcaption>
+          </figure>
+          <figure class="project-detail-inline-figure">
+            <img src="./assets/images/robotic-arm/04-fea-gears.png"
+              alt="Fusion 360 von Mises stress simulation on the gear-driven shoulder joint"
+              loading="lazy" width="800" height="600">
+            <figcaption>Gear-driven shoulder — von Mises stress</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">Fabrication and manufacturing</h2>
+        <ul class="project-detail-list">
+          <li><strong>Laser cutting</strong> — flat structural plates and brackets</li>
+          <li><strong>3D printing</strong> — complex housings, covers, and joint geometry</li>
+          <li><strong>Machining</strong> — drilled and reamed precision holes, deburring, press-fit bearings</li>
+        </ul>
+        <p class="project-detail-intro">
+          The CAD included tolerance stack-ups and fit specifications for smooth assembly.
+        </p>
+      </section>
+
+      <section aria-label="Gripper demonstration">
+        <h2 class="project-detail-section-title">Assembly and testing</h2>
+        <p class="project-detail-intro">
+          I assembled the full arm, verified joint motion and alignment, and checked rigidity under load. Built performance
+          matched predictions from the torque and FEA work, confirming the design workflow end to end.
+        </p>
+        <div class="project-detail-videos">
+          <figure class="project-detail-video">
+            <figcaption class="project-detail-video__caption">Gripper actuation — pick-and-place testing</figcaption>
+            <div class="project-detail-video__embed">
+              <iframe
+                src="https://www.youtube.com/embed/0M7rdd7oXAE?mute=1&amp;modestbranding=1&amp;rel=0"
+                title="Robotic arm gripper demonstration"
+                loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+          </figure>
+        </div>
+        <p class="project-detail-intro project-detail-video__note">
+          Playback starts muted. Use the player controls to turn sound on if you want it.
+        </p>
+        <p class="project-detail-intro project-detail-video__note">
+          Watch on YouTube:
+          <a href="https://www.youtube.com/watch?v=0M7rdd7oXAE" class="project-detail-video__link" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=0M7rdd7oXAE</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">Tools and technologies</h2>
+        <p class="project-detail-intro project-detail-tools">
+          Autodesk Fusion 360, hand calculations, FEA (static stress), laser cutting, 3D printing, drilling, reaming,
+          bearing press-fit
+        </p>
+      </section>
+
+    </article>
+
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoAI Satellite Analysis Workflow — Parth Bhagwat</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="project-detail-page">
+
+    <a href="index.html#projects" class="project-detail-back">
+      <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
+      Back to projects
+    </a>
+
+    <article class="project-detail-card">
+
+      <header>
+        <p class="project-detail-meta">AI and Software · ISRO Remote Sensing · Jul 2025 – Aug 2025</p>
+        <h1 class="project-detail-title">GeoAI Satellite Analysis Workflow</h1>
+      </header>
+
+      <section>
+        <p class="project-detail-intro">
+          I worked as a research intern in the Remote Sensing Division at the Indian Space Research Organisation (ISRO),
+          contributing to a GeoAI framework that integrates LangGraph and Google Earth Engine (GEE) to automate satellite
+          image retrieval and generation. My work focused on a scalable pipeline that lets non-technical users access,
+          query, and visualize satellite imagery with high accuracy.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">GeoAI framework for automated satellite image retrieval</h2>
+
+        <h3 class="project-detail-subtitle">Objective</h3>
+        <p class="project-detail-intro">
+          Develop a natural-language-driven system that can retrieve, process, and generate satellite imagery using AI
+          agents, enabling faster and more accessible remote sensing workflows.
+        </p>
+
+        <h3 class="project-detail-subtitle">Contributions</h3>
+
+        <h4 class="project-detail-subsubtitle">1. Pipeline architecture and model integration</h4>
+        <ul class="project-detail-list">
+          <li>Designed and implemented a LangGraph-based agentic workflow that interprets user queries and converts them into GEE API calls</li>
+          <li>Used Pydantic for query parsing and parameter validation before Earth Engine requests</li>
+          <li>Integrated multiple AI agents for query parsing, geospatial reasoning, and image generation</li>
+          <li>Built a modular pipeline supporting single-image retrieval, change-detection indices (e.g. NDVI, NDWI), and multiple satellite datasets (Sentinel-2, Landsat-8, and others)</li>
+        </ul>
+        <figure class="project-detail-inline-figure">
+          <img src="./assets/images/geoai/01-workflow-architecture.png"
+            alt="GeoAI workflow from natural language query through LangGraph and Google Earth Engine to map output"
+            loading="lazy" width="1200" height="800">
+          <figcaption>System workflow — query parsing, GEE retrieval, change detection, and verified map output</figcaption>
+        </figure>
+
+        <h4 class="project-detail-subsubtitle">2. Satellite image retrieval and processing</h4>
+        <p class="project-detail-intro">
+          I automated retrieval by location, date range, cloud-cover threshold, and spectral band selection, with
+          preprocessing such as cloud masking, band normalization, and region clipping.
+        </p>
+        <figure class="project-detail-inline-figure">
+          <img src="./assets/images/geoai/03-ndbi-map-output.png"
+            alt="Map output showing NDBI values and NDBI change layers for urban analysis"
+            loading="lazy" width="1200" height="800">
+          <figcaption>Example retrieval output — NDBI and NDBI change layers delivered to the user</figcaption>
+        </figure>
+
+        <h4 class="project-detail-subsubtitle">3. Retrieval performance evaluation</h4>
+        <p class="project-detail-intro">
+          Performance was evaluated across 400 trials (100 per query category):
+        </p>
+        <ul class="project-detail-list">
+          <li><strong>RGB retrieval</strong> — 98% success (98/100); common issues: coordinate extraction errors, narrow date ranges</li>
+          <li><strong>Time-specific retrieval</strong> — 93% success (93/100); common issues: unavailable dates, vague date requests</li>
+          <li><strong>Descriptive location retrieval</strong> — 98% success (98/100); common issues: ambiguous locations, hallucinated answers</li>
+          <li><strong>Change detection</strong> — 95% success (95/100); common issues: unsupported indices, parse failures, insufficient clear imagery</li>
+          <li><strong>Overall</strong> — 96% success (384/400 successful outputs)</li>
+        </ul>
+        <figure class="project-detail-inline-figure">
+          <img src="./assets/images/geoai/02-validation-results.png"
+            alt="Table of GeoAI query categories, trial counts, success rates, and common failure modes"
+            loading="lazy" width="1200" height="800">
+          <figcaption>Retrieval evaluation — success rates by query category across 400 trials</figcaption>
+        </figure>
+
+        <h4 class="project-detail-subsubtitle">4. Image generation and validation</h4>
+        <ul class="project-detail-list">
+          <li>Developed a model to generate synthetic satellite images using retrieved metadata</li>
+          <li>Validated outputs by checking that the values used for each variable (e.g. location, date range, bands, and indices) matched the intended query</li>
+        </ul>
+
+        <h4 class="project-detail-subsubtitle">5. User-facing interface for non-technical users</h4>
+        <ul class="project-detail-list">
+          <li>Built a natural-language interface for requesting satellite images with simple prompts</li>
+          <li>Enabled automated responses with maps, metadata, and processed imagery</li>
+          <li>Reduced reliance on manual GEE scripting to make remote sensing more accessible</li>
+        </ul>
+        <figure class="project-detail-inline-figure">
+          <img src="./assets/images/geoai/04-natural-language-ui.png"
+            alt="Natural language prompt comparing water body changes near Guwahati between March 2020 and March 2024"
+            loading="lazy" width="1200" height="800">
+          <figcaption>Natural-language interface — example query for water-body change analysis near Guwahati</figcaption>
+        </figure>
+
+        <h4 class="project-detail-subsubtitle">6. Research paper contribution</h4>
+        <ul class="project-detail-list">
+          <li>Co-authored a research paper documenting the GeoAI framework, methodology, and performance results</li>
+          <li>Contributed sections on system architecture, model evaluation, and experimental results</li>
+        </ul>
+
+        <h3 class="project-detail-subtitle">Impact</h3>
+        <ul class="project-detail-list">
+          <li>Reduced satellite image retrieval time from minutes to seconds</li>
+          <li>Enabled non-technical users to access remote sensing data without writing code</li>
+          <li>Demonstrated feasibility of AI-driven geospatial workflows for national-scale applications</li>
+          <li>Provided ISRO with a scalable foundation for future GeoAI tools</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="project-detail-section-title">Technical skills</h2>
+        <ul class="project-detail-list">
+          <li><strong>AI/ML:</strong> LangChain, LangGraph, LLM-based agents</li>
+          <li><strong>Geospatial:</strong> Google Earth Engine, remote sensing workflows</li>
+          <li><strong>Programming:</strong> Python, geospatial APIs, data pipelines</li>
+          <li><strong>Research:</strong> Paper writing, experimental design, model validation</li>
+        </ul>
+      </section>
+
+    </article>
+
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
